@@ -34,6 +34,15 @@ def binary_operators():
     
     ex5 = {"a": 1} | {"a": 3, "b": 2}
     print(ex5)
+    
+    new_dict = {"a": 1}
+    new_dict |= {"a":7, "b": 11}
+    print(new_dict)
+    
+    a = {"a": 1}
+    b = {"a": 3, "b": 2}
+    
+    print({**a, **b})
 
 print("\n")
 print("#### binary operators ###")
