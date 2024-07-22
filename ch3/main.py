@@ -20,7 +20,8 @@ def binary_operators():
     # difference -
     # symmetric ^
     
-    ex1 = {1,2,3} & {1,4}
+    # only thing common among all 3 is 1
+    ex1 = {1,2,3} & {1,4} & {1,2,3,4,5}
     print(ex1)
     
     ex2 = {1,2,3} | {1,4}
