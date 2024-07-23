@@ -60,6 +60,17 @@ def chain_map():
     print(user["iban"])
     print(user["display_name"])
     print(user["type"])
+    print(user)
+    
+    user_profile["display_name"] = "new name"
+    print(user)
+    
+    # only CRUD left most mappings
+    user["display_name"] = "John guy"
+    user["age"] = 18
+    user["type"] = "extension"
+    print(user_profile)
+    print(user_account)
 
 print("\n")
 print("#### using chainmap to unpack dict ###")
