@@ -1,3 +1,4 @@
+from collections import ChainMap
 
 def merge_update():
     list1 = [1,2,3]
@@ -50,3 +51,17 @@ print("#### binary operators ###")
 binary_operators()
 print("#### binary operators ###")
 print("\n")
+
+def chain_map():
+    
+    user_account = {"iban": "gb71barc20031885581746", "type": "account"}
+    user_profile = {"display_name": "John Doe", "type": "profile"}
+    user = ChainMap(user_account, user_profile)
+    print(user["iban"])
+    print(user["display_name"])
+    print(user["type"])
+
+print("\n")
+print("#### using chainmap to unpack dict ###")
+chain_map()
+print("#### using chainmap to unpack dict ###")
