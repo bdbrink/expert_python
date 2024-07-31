@@ -13,3 +13,6 @@ class MyClass(Base1, Base2):
 
 obj = MyClass()
 obj.method()
+
+# Print the Method Resolution Order (MRO) for MyClass
+print(MyClass.__mro__)

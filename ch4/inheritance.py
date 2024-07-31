@@ -11,3 +11,5 @@ class MyClass(Base1, Base2):
 
 obj = MyClass()
 obj.method()
+
+L[MyClass(Base1, Base2)] = [MyClass] + merge(L[Base1], L[Base2], [Base1, Base2])
