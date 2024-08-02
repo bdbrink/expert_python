@@ -13,3 +13,10 @@ class RevealAccess(object):
         
     def __delete__(self, obj):
         print("Deleting", self.name)
+        
+class MyClass(object):
+    x = RevealAccess(10, 'var "x"')
+    y = 5
+
+m = MyClass()
+print(m.x)
