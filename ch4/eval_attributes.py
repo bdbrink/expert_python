@@ -11,12 +11,12 @@ class InitOnAccess:
         if self._initialized is None:
             print("init!")
             self._initialized = self.klass(*self.args, **self.kwargs)
-        else:
-            print("cached!")
-            return self._initialized
+        print("cached!")
+        return self._initialized
 
 class WithSortedRandoms:
     lazy_init = InitOnAccess(sorted, [random.random() for _ in range(5)])
 
 m = WithSortedRandoms()
+print(m.lazy_init)
 print(m.lazy_init)
