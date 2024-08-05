@@ -23,3 +23,7 @@ m = MyClass()
 print(m.x)
 m.x = 20
 print(m.x)
+
+def function(): pass
+print(hasattr(function, '__get__'))
+print(hasattr(function, '__set__'))
