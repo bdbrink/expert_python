@@ -11,7 +11,8 @@ class InitOnAccess:
         if self._initialized is None:
             print("init!")
             self._initialized = self.klass(*self.args, **self.kwargs)
-        print("cached!")
+        else:
+            print("cached!")
         return self._initialized
 
 class WithSortedRandoms:
