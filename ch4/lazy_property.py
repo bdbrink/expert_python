@@ -20,6 +20,13 @@ class ObjectUsingShaderProgram(object):
         gl_Position = vertexPosition;
     }
     """
+    
+    fragment = """
+        out lowp vec4 out_color;
+        void main(){
+            out_color = vec4(1,1,1,1);
+        }
+    """
 
     @lazy_property
     def shader_program(self):
