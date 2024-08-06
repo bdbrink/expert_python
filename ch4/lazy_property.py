@@ -1,12 +1,28 @@
 import OpenGL.GL as gl
 from OpenGL.GL import shaders
+from functools import wraps
 
-class lazy_class_attribute(object):
-    def __init__(self, function):
-        self.fget = function
-        
-    def __get__(self, obj, cls):
-        value = self.fget(cls)
-        
-        setattr(cls, self.fget.__name__, value)
-        return value
+def lazy_property(func):
+    attr_name = '_lazy_' + func.__name__
+
+    @wraps(func)
+    def wrapper(self):
+        if not hasattr(self, attr_name):
+            setattr(self, attr_name, func(self))
+        return getattr(self, attr_name)
+
+    return property(wrapper)
+
+class ObjectUsingShaderProgram(object):
+    vertex = """
+    layout(location = 0) in vec4 vertexPosition;
+    void main(){
+        gl_Position = vertexPosition;
+    }
+    """
+
+    @lazy_property
+    def shader_program(self):
+        vertex_shader = shaders.compileShader(self.vertex, gl.GL_VERTEX_SHADER)
+        fragment_shader = shaders.compileShader(self.fragment, gl.GL_FRAGMENT_SHADER)
+        return shaders.compileProgram(vertex_shader, fragment_shader)
