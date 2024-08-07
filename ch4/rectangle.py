@@ -31,3 +31,6 @@ class Rectangle:
             self.__class__.__name__,
             self.x1, self.y1, self.x2, self.y2
         )
+
+rectangle = Rectangle(10, 10, 25, 34)
+print(f"the width is: {rectangle.width} \nthe width is: {rectangle.height}")
