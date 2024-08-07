@@ -20,3 +20,14 @@ class Rectangle:
         _width_get, _width_set,
         doc="rectangle width measured from left"
     )
+
+    height= property(
+        _height_get, _height_set,
+        doc="rectangle height measured from top"
+    )
+
+    def __repr__(self):
+        return "{}({}, {}, {})".format(
+            self.__class__.__name__,
+            self.x1, self.y1, self.x2, self.y2
+        )
