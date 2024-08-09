@@ -4,3 +4,10 @@ class Matrix:
             raise ValueError("All matrix rows must be the same length")
         
         self.rows = rows
+
+    def __add__(self, other):
+        if (
+            len(self.rows) != len(other.rows) or
+            len(self.rows[0]) != len(other.rows[0])
+        ):
+            raise ValueError("Matrix dimensions don't match")
