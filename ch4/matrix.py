@@ -29,3 +29,9 @@ class Matrix:
             [a - b for a,b in zip(a_row, b_row)]
             for a_row, b_row in zip(self.rows, other.rows)
         ])
+    
+    def __mul__(self, other):
+        if not isinstance(other, Matrix):
+            raise ValueError(
+                "Matrix dimensions don't match"
+            )
