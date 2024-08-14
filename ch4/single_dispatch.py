@@ -1,5 +1,6 @@
 from functools import singledispatch
 from datetime import datetime
+from numbers import Real
 
 @singledispatch
 def report(value):
@@ -8,6 +9,10 @@ def report(value):
 def _(value: datetime):
     return f"dt: {value.isoformat()}"
 
-print(report(12))
+@report.register
 
-print(_(datetime.now))
+@report.register
+def _(value: Real):
+    return f"real: {value:f}"
+
+print(report(12))
