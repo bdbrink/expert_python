@@ -10,6 +10,8 @@ def _(value: datetime):
     return f"dt: {value.isoformat()}"
 
 @report.register
+def _(value: complex):
+    return f"complex: {value.real}{value.imag:+}j"
 
 @report.register
 def _(value: Real):
