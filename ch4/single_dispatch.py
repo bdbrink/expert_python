@@ -6,6 +6,7 @@ from numbers import Real
 def report(value):
     return f"raw: {value}"
 
+@report.register
 def _(value: datetime):
     return f"dt: {value.isoformat()}"
 
