@@ -19,3 +19,4 @@ def _(value: Real):
     return f"real: {value:f}"
 
 print(report(12))
+report(datetime.now())
