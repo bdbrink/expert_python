@@ -2,6 +2,15 @@ from functools import singledispatch
 from datetime import datetime
 from numbers import Real
 
+class Example:
+    @singledispatch
+    def method(self, arguement):
+        pass
+    
+    @method.register
+    def _(self, argument: float):
+        pass
+
 @singledispatch
 def report(value):
     return f"raw: {value}"
