@@ -1,5 +1,10 @@
 from dataclasses import dataclass
 
+@dataclass(frozen=True)
+class FrozenVector:
+    x: int
+    y: int
+
 @dataclass
 class optimizedVector:
     x: int
