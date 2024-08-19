@@ -1,3 +1,6 @@
+from dataclasses import dataclass
+
+@dataclass
 class Vector:
     def __init__(self, x, y):
         self.x = x
