@@ -45,3 +45,20 @@ class Vector:
     def __eq__(self, other):
         return self.x == other.x and self.y == other.y
     
+
+# Creating instances of optimizedVector
+v1 = optimizedVector(3, 4)
+v2 = optimizedVector(1, 2)
+
+v3 = v1 + v2
+print(v3)
+
+v4 = v1 - v2
+print(v4)
+
+v1 = Vector(5, 7)
+v2 = Vector(2, 3)
+
+# Adding vectors
+v3 = v1 + v2
+print(v3)
