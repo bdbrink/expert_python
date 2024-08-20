@@ -72,3 +72,7 @@ v2 = Vector(2, 3)
 # Adding vectors
 v3 = v1 + v2
 print(v3)
+
+print(DataClassWithDefaults())
+print(DataClassWithDefaults("This is immutable"))
+print(DataClassWithDefaults(None, ["this", "works"]))
