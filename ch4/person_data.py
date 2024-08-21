@@ -6,3 +6,4 @@ class Person:
     weight: int
     name: str
 
+sorted(people, key=lambda person: person.age)
