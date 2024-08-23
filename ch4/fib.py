@@ -5,4 +5,7 @@ def fibonacci():
         yield b
         a, b = b, a + b
 
-fibonacci()
+for item in fibonacci():
+    print(item)
+    if item > 10:
+        break
