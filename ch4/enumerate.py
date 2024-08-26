@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import Enum, auto
 
 class Weekday(Enum):
     MONDAY = 0
@@ -9,3 +9,11 @@ class Weekday(Enum):
     SATURDAY = 5
     SUNDAY = 6
 
+class Weekday_Auto(Enum):
+    MONDAY = auto()
+    TUESDAY = auto()
+    WEDNESDAY = auto()
+    THURSDAY = auto()
+    FRIDAY = auto()
+    SATURDAY = auto()
+    SUNDAY = auto()
