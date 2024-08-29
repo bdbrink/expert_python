@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import itertools
 
 @dataclass
-class Sqaure:
+class Square:
     x: float
     y: float
     size: float
@@ -54,6 +54,10 @@ class Box:
     x2: float
     y2: float
 
+def rects_collide(box1, box2):  # Added missing function
+    return (box1.x1 < box2.x2 and box1.x2 > box2.x1 and
+            box1.y1 < box2.y2 and box1.y2 > box2.y1)
+
 def find_collisions(objects):
     return [
         (item1, item2)
@@ -66,9 +70,9 @@ def find_collisions(objects):
     ]
 
 for collision in find_collisions([
-    Sqaure(0,0,10),
-    Rect(5,5,20,20),
-    Sqaure(15,20,5),
-    Circle(1,1,2)
+    Square(0, 0, 10),
+    Rect(5, 5, 20, 20),
+    Square(15, 20, 5),
+    Circle(1, 1, 2)
 ]):
     print(collision)
