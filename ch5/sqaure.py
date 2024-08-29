@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import itertools
 
 @dataclass
 class Sqaure:
@@ -53,3 +54,21 @@ class Box:
     x2: float
     y2: float
 
+def find_collisions(objects):
+    return [
+        (item1, item2)
+        for item1, item2
+        in itertools.combinations(objects, 2)
+        if rects_collide(
+            item1.bounding_box,
+            item2.bounding_box
+        )
+    ]
+
+for collision in find_collisions([
+    Sqaure(0,0,10),
+    Rect(5,5,20,20),
+    Sqaure(15,20,5),
+    Circle(1,1,2)
+]):
+    print(collision)
