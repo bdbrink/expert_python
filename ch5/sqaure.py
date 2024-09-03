@@ -1,5 +1,9 @@
 from dataclasses import dataclass
+from zope.interface import Interface, Attribute
 import itertools
+
+class ICollidable(Interface):
+    bounding_box = Attribute("Object's bounding box")
 
 @dataclass
 class Square:
