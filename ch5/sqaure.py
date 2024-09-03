@@ -1,11 +1,12 @@
 from dataclasses import dataclass
-from zope.interface import Interface, Attribute
+from zope.interface import Interface, Attribute, implementer
 import itertools
 
 class ICollidable(Interface):
     bounding_box = Attribute("Object's bounding box")
 
 @dataclass
+@implementer(ICollidable)
 class Square:
     x: float
     y: float
@@ -21,6 +22,7 @@ class Square:
         )
 
 @dataclass
+@implementer(ICollidable)
 class Rect:
     x: float
     y: float
@@ -37,6 +39,7 @@ class Rect:
         )
 
 @dataclass
+@implementer(ICollidable)
 class Circle:
     x: float
     y: float
@@ -52,6 +55,7 @@ class Circle:
         )
 
 @dataclass
+@implementer(ICollidable)
 class Box:
     x1: float
     y1: float
