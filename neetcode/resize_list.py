@@ -1,6 +1,8 @@
 from typing import List
 
 def append_elements(arr1: List[int], arr2: List[int]) -> List[int]:
+    # can use the extend operator
+    # arr1.extend(arr2)
     return arr1 + arr2
 
 def remove_elements(arr1: List[int], arr2: List[int]) -> List[int]:
