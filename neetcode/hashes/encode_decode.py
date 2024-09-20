@@ -5,6 +5,7 @@ class Solution:
         for s in strs:
             res += str(len(s)) + "#" + s
         return res
+
     def decode(self, s: str) -> List[str]:
         res,i = [], 0
 
